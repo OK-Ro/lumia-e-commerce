@@ -368,6 +368,10 @@ const Nav = () => {
   const [openSubMenu, setOpenSubMenu] = useState(null);
   const [searchOpen, setSearchOpen] = useState(false);
 
+  const addToCart = () => {
+    setCartCount(cartCount + 1);
+  };
+
   const toggleMenu = () => {
     setMenuOpen((prevState) => !prevState);
   };
@@ -486,7 +490,7 @@ const Nav = () => {
         </NavSection>
         <NavSection>
           <IconWrapper>
-            <Icon>
+            <Icon onClick={addToCart}>
               <FaShoppingCart />
               {cartCount > 0 && <CartCount>{cartCount}</CartCount>}
             </Icon>
